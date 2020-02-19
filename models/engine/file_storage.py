@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """ file storage class"""
 import json
-from models.base_model import BaseModel
+import os
+from base_model import BaseModel
 
 class FileStorage(BaseModel):
     """
@@ -39,10 +40,11 @@ class FileStorage(BaseModel):
         """ deserializes the JSON
         file to __objects
         """
-        if self.__file_path:
-            with open(self.__file_path, r, encoding="UTF-8") as my_file:
-                new_obj = json.load(my_file)
-            for key, value in new_obj.items():
-                class_name = value['__class__']
-                del value['__class__']
-                self.__objects[key] = eval(class_name)(**value)
+        if os.path.isfile(self.__file_path):
+            if os.stat(self.__file_path).st_size != 0:
+                with open(self.__file_path, encoding='UTF-8') as my_file:
+                    new_object = json.load(my_file)
+                for key, value in new_object.items():
+                    class_name = value['__class__']
+                    del value['__class__']
+                    self.__objects[key] = eval(class_name)(**value)
