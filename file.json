@@ -1,0 +1,15 @@
+cat: file.json: No such file or directory
+guillaume@ubuntu:~/AirBnB$
+guillaume@ubuntu:~/AirBnB$ ./test_save_reload_base_model.py
+-- Reloaded objects --
+-- Create a new object --
+[BaseModel] (ee49c413-023a-4b49-bd28-f2936c95460d) {'my_number': 89, 'updated_at': datetime.datetime(2017, 9, 28, 21, 7, 25, 47381), 'created_at': datetime.datetime(2017, 9, 28, 21, 7, 25, 47372), 'name': 'Holberton', 'id': 'ee49c413-023a-4b49-bd28-f2936c95460d'}
+guillaume@ubuntu:~/AirBnB$
+guillaume@ubuntu:~/AirBnB$ cat file.json ; echo ""
+{"BaseModel.ee49c413-023a-4b49-bd28-f2936c95460d": {"my_number": 89, "__class__": "BaseModel", "updated_at": "2017-09-28T21:07:25.047381", "created_at": "2017-09-28T21:07:25.047372", "name": "Holberton", "id": "ee49c413-023a-4b49-bd28-f2936c95460d"}}
+guillaume@ubuntu:~/AirBnB$
+guillaume@ubuntu:~/AirBnB$ ./test_save_reload_base_model.py
+-- Reloaded objects --
+[BaseModel] (ee49c413-023a-4b49-bd28-f2936c95460d) {'name': 'Holberton', 'id': 'ee49c413-023a-4b49-bd28-f2936c95460d', 'updated_at': datetime.datetime(2017, 9, 28, 21, 7, 25, 47381), 'my_number': 89, 'created_at': datetime.datetime(2017, 9, 28, 21, 7, 25, 47372)}
+-- Create a new object --
+[BaseModel] (080cce84-c574-4230-b82a-9acb74ad5e8c) {'name': 'Holberton', 'id': '080cce84-c574-4230-b82a-9acb74ad5e8c', 'updated_at': datetime.datetime(2017, 9, 28, 21, 7, 51, 973308), 'my_number': 89, 'created_at': datetime.datetime(2017, 9, 28, 21, 7, 51, 973301)}
