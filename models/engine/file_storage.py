@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-""" file storage class"""
+
 import json
 import os
-from base_model import BaseModel
+from models.base_model import BaseModel
 
-class FileStorage(BaseModel):
+class FileStorage:
     """
     class that serializes instances to a JSON file
     and deserializes JSON file to instances:
@@ -12,12 +12,11 @@ class FileStorage(BaseModel):
     __file_path = 'file.json'
     __objects = {}
 
-
     def all(self):
-        """ returns the
-        dictionary __objects
         """
-        return (self.__objects)
+        all: returns the dictionary of all objects
+        """
+        return FileStorage.__objects
 
     def new(self, obj):
         """ sets in __objects the obj
