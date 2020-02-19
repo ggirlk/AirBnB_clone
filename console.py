@@ -17,6 +17,9 @@ class HBNBCommand(cmd.Cmd):
         """ quit commande interpretor """
         return True
 
+    def emptyline(self):
+        """ emptyline """
+        return False
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
