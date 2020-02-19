@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ entry point of the command interpreter """
 import cmd
+import sys
 
 
 class HBNBCommand(cmd.Cmd):
@@ -35,6 +36,9 @@ class HBNBCommand(cmd.Cmd):
                            'if you need command help' % arg)
                 return
             self.message(command.__doc__.rstrip())
+
+    def help_quit(self):
+        print('Quit command to exit the program\n')
 
     def do_quit(self, arg):
         """ quit commande interpretor """
