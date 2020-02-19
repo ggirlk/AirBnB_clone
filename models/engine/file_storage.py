@@ -4,6 +4,7 @@ import json
 import os
 from models.base_model import BaseModel
 
+
 class FileStorage:
     """
     class that serializes instances to a JSON file
@@ -30,7 +31,7 @@ class FileStorage:
         to the JSON file
         """
         with open(self.__file_path, w, encoding="UTF-8") as my_file:
-            new_dict={}
+            new_dict = {}
             for key, value in self.__objects.items():
                 new_dict[key] = value.to_dict()
             json.dump(new_dict, my_file)
