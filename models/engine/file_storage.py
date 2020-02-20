@@ -46,7 +46,5 @@ class FileStorage:
                     new_object = json.load(my_file)
                 for key, value in new_object.items():
                     class_name = value['__class__']
-                    print('class name printing')
-                    print(class_name)
                     del value['__class__']
                     self.__objects[key] = eval(class_name)(**value)
