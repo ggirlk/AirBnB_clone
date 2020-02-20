@@ -6,6 +6,7 @@ from models.base_model import BaseModel
 
 myModels = {"BaseModel": BaseModel}
 
+
 class HBNBCommand(cmd.Cmd):
     """ entry point hbnb Class """
 
@@ -38,7 +39,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, arg):
         """  """
-        
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
